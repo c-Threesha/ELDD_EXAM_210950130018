@@ -1,10 +1,10 @@
-obj-m :=ioctl.o
-kerndir=/lib/modules/$(shell uname -r)/build
-PWD :=$(shell pwd)
+obj-m := blink.o
+KERNELDIR = /lib/modules/$(shell uname -r)/build
+PWD := $(shell pwd)
 
 all:
-	$(MAKE) -C $(KERNDIR) M=$(PWD) modules
-install:
-	$(MAKE) -C $(KERNDIR) M=$(PWD) modules_install
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) modules
+        
 clean:
-	$(MAKE) -C $(KERNDIR) M=$(PWD) clean
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) clean
+        
